@@ -20,15 +20,30 @@ img{
   transform: matrix(1,0,0,1,-393,0);
 }
 
-.perchenload{
-  display: flex;
-  background-color: #ffffff;
+.perchenload_upper{
+  padding: 1%;
   width: 700px;
   height: 35px;
   border-radius: 15px;
+  display: flex;
+  background-color: #ffffff;
+}
+
+.perchenload{
+  display: flex;
+  width: 700px;
+  height: 35px;
+  border-radius: 15px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0);
+  
 }
 
 .preloader{
+    flex-direction: column;
+    contain: layout;
     position: absolute;
     left: 0;
     top: 0;
@@ -72,16 +87,26 @@ img{
     opacity: 1;
     border-radius: 50%;
     animation: ldio-yzaezf3dcmj 1s cubic-bezier(0,0.2,0.8,1) infinite;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0);
   }
   .ldio-yzaezf3dcmj div:nth-child(1) {
     border-radius: 37% 61% 63% 35% / 42% 34% 64% 56%;
     border-color: #ffffff;
     animation-delay: 1s;
+    
   }
   .ldio-yzaezf3dcmj div:nth-child(2) {
     border-radius: 37% 61% 63% 35% / 42% 34% 64% 56%;
-    border-color: #000000;
+    border-color: #ffffff;
     animation-delay: 1.5s;
+  }
+  .ldio-yzaezf3dcmj div:nth-child(3) {
+    border-radius: 37% 61% 63% 35% / 42% 34% 64% 56%;
+    border-color: #ffffff;
+    animation-delay: 2s;
   }
   .loadingio-spinner-ripple-2by998twmg8 {
     width: 700px;
@@ -99,3 +124,125 @@ img{
     transform-origin: 0 0; /* see note above */
   }
   .ldio-yzaezf3dcmj div { box-sizing: content-box; }
+
+
+  .glossy-div1 {
+    top: -250px;
+    position: absolute;
+    rotate: 45deg;
+    opacity: 0.7;
+    color: white;
+    width: 200px;
+    height: 500px;
+    background: linear-gradient(90deg,rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.glossy-div2 {
+  top: -35%;
+  left: 7%;
+  position: absolute;
+  rotate: 45deg;
+  opacity: 0.7;
+  color: white;
+  width: 200px;
+  height: 1200px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.glossy-div3 {
+  top: -41%;
+  left: 17%;
+  position: absolute;
+  rotate: 45deg;
+  opacity: 0.7;
+  color: white;
+  width: 200px;
+  height: 1750px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.glossy-div4 {
+  top: -47%;
+  left: 36%;
+  position: absolute;
+  rotate: 45deg;
+  opacity: 0.7;
+  color: white;
+  width: 200px;
+  height: 1950px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.glossy-div5 {
+  top: -47%;
+  left: 57%;
+  position: absolute;
+  rotate: 45deg;
+  opacity: 0.7;
+  color: white;
+  width: 200px;
+  height: 1950px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.glossy-div6 {
+  top: -47%;
+  left: 78%;
+  position: absolute;
+  rotate: 45deg;
+  opacity: 0.7;
+  color: white;
+  width: 200px;
+  height: 1950px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.glossy-div7 {
+  top: -47%;
+  left: 99%;
+  position: absolute;
+  rotate: 45deg;
+  opacity: 0.7;
+  color: white;
+  width: 200px;
+  height: 1950px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.glossy-div8 {
+  top: -47%;
+  left: 118%;
+  position: absolute;
+  rotate: 45deg;
+  opacity: 0.7;
+  color: white;
+  width: 200px;
+  height: 1950px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+
+
