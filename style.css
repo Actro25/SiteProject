@@ -11,6 +11,23 @@ img{
     width: 100%;
 }
 
+.for_loader_perchent_obl{
+  align-items: center;
+  position: absolute;
+  flex-direction: column;
+  left: 50%;
+  top: 90%;
+  transform: matrix(1,0,0,1,-393,0);
+}
+
+.perchenload{
+  display: flex;
+  background-color: #ffffff;
+  width: 700px;
+  height: 35px;
+  border-radius: 15px;
+}
+
 .preloader{
     position: absolute;
     left: 0;
@@ -23,6 +40,7 @@ img{
 
 .preloader__loader{
     position:absolute;
+    justify-content: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -30,17 +48,19 @@ img{
 
 @keyframes ldio-yzaezf3dcmj {
     0% {
-      top: 96px;
-      left: 96px;
+      transform: rotate(0);
+      top: 290px;
+      left: 290px;
       width: 0;
       height: 0;
       opacity: 1;
     }
     100% {
-      top: 18px;
-      left: 18px;
-      width: 156px;
-      height: 156px;
+      transform: rotate(360deg);
+      top: 0px;
+      left: 0px;
+      width: 606px;
+      height: 606px;
       opacity: 0;
     }
   }
@@ -54,16 +74,18 @@ img{
     animation: ldio-yzaezf3dcmj 1s cubic-bezier(0,0.2,0.8,1) infinite;
   }
   .ldio-yzaezf3dcmj div:nth-child(1) {
+    border-radius: 37% 61% 63% 35% / 42% 34% 64% 56%;
     border-color: #ffffff;
-    animation-delay: 0s;
+    animation-delay: 1s;
   }
   .ldio-yzaezf3dcmj div:nth-child(2) {
+    border-radius: 37% 61% 63% 35% / 42% 34% 64% 56%;
     border-color: #000000;
-    animation-delay: -0.5s;
+    animation-delay: 1.5s;
   }
   .loadingio-spinner-ripple-2by998twmg8 {
-    width: 200px;
-    height: 200px;
+    width: 700px;
+    height: 700px;
     display: inline-block;
     overflow: hidden;
     background: none  ;
