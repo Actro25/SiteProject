@@ -16,7 +16,7 @@ img{
   align-items: center;
   justify-content: center; /* Центрує дочірні елементи по горизонталі */
   position: absolute;
-  top: 50%;
+  top: 90%;
   width: 100%;
   transform: translateY(-50%); /* Центрує блок по вертикалі */
 }
@@ -74,17 +74,36 @@ img{
   position: absolute;
   justify-content: center;
   align-items: center;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.intprochent_chet {
+  color: #ffffff;
+  z-index: 1001;
+  position: absolute;
+  display: flex; /* Додаємо */
+  justify-content: center; /* Центруємо по горизонталі */
+  align-items: center; /* Центруємо по вертикалі */
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0);
 }
 
 @keyframes ldio-yzaezf3dcmj {
   0% {
     top: 50%;
     left: 50%;
-    width: 0;
-    height: 0;
+    width: 100px;
+    height: 100px;
     opacity: 1;
     transform: translate(-50%, -50%);
   }
@@ -104,7 +123,7 @@ img{
   border-style: solid;
   opacity: 1;
   border-radius: 50%;
-  animation: ldio-yzaezf3dcmj 1s cubic-bezier(0,0.2,0.8,1) infinite;
+  animation: ldio-yzaezf3dcmj 2s cubic-bezier(0,0.2,0.8,1) infinite;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0));
   backdrop-filter: blur(10px);
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
@@ -148,7 +167,7 @@ img{
   box-sizing: content-box;
 }
 
-  .glossy-div1 {
+.glossy-div1 {
     top: -250px;
     position: absolute;
     rotate: 45deg;
