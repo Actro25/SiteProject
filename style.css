@@ -11,63 +11,70 @@ img{
     width: 100%;
 }
 
+body.lock-scroll {
+  overflow: hidden;
+}
+
+
 .for_loader_perchent_obl {
   display: flex;
   align-items: center;
-  justify-content: center; /* Центрує дочірні елементи по горизонталі */
+  justify-content: center;
   position: absolute;
   top: 90%;
   width: 100%;
-  transform: translateY(-50%); /* Центрує блок по вертикалі */
+  transform: translateY(-50%);
+}
+
+.preloader--fade {
+  opacity: 0;
+}
+
+.preloader--hide {
+  display: none;
+  visibility: hidden;
 }
 
 .perchenload_upper {
   display: flex;
   align-items: center;
-  justify-content: center; /* Якщо є внутрішні елементи */
-  padding: 0.7%;
   width: 700px;
   height: 35px;
   border-radius: 15px;
-  background-color: #ffffff;
-}
-
-.perchenload {
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Якщо є внутрішні елементи */
-  width: 700px;
-  height: 35px;
-  border-radius: 15px;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0));
+  padding: 0.25%;
+  background: linear-gradient(90deg, rgb(219, 219, 219) 0%, rgb(218, 217, 217));
   backdrop-filter: blur(10px);
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0);
 }
 
-.test-div{
-  position:absolute;
-  justify-content: center;
-  align-items: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #ffffff;
-  width: 700px;
-  height: 35px;
+.perchenload {
+  height: 100%;
+  width: 0%; /* Початкова ширина - 0% */
+  border-radius: 15px;
+  background: linear-gradient(90deg, rgba(0, 123, 255, 1) 0%, rgba(0, 123, 255, 0.8) 100%);
+  transition: width 0.5s ease-in-out; /* Плавний перехід */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0);
 }
 
-.preloader{
-    z-index: 1000;
-    flex-direction: column;
-    contain: layout;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-image:  url(img/1625872323_21-kartinkin-com-p-serii-fon-tekstura-krasivo-21.jpg);
-    background-size: cover;
+
+.preloader {
+  z-index: 10000;
+  flex-direction: column;
+  contain: layout;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(img/whitepn.jpg);
+  background-size: cover;
+  transition: all 3s ease-out;
+  opacity: 1; /* Початкова прозорість */
+  visibility: visible; /* Початкова видимість */
+  transition: opacity 1.5s ease-in-out;
 }
 
 .preloader__loader {
@@ -81,7 +88,7 @@ img{
 
 .intprochent_chet {
   color: #ffffff;
-  z-index: 1001;
+  z-index: 10001;
   position: absolute;
   display: flex; /* Додаємо */
   justify-content: center; /* Центруємо по горизонталі */
