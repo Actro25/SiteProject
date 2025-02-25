@@ -28,29 +28,46 @@ function hidePreloader() {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.body.classList.add('lock-scroll'); // Забороняємо скрол
+    document.documentElement.style.overflow = "hidden"; // Забороняємо прокрутку
+    document.body.classList.add('lock-scroll'); 
 
     const imgs = document.querySelectorAll('img, video');
     let i = 0;
-    
+
     const intprochentChet = document.getElementById("intprochent_chet");
     const perchenload = document.getElementById("perchenload");
 
-    imgs.forEach((img) => { 
-        img.onload = () => {
-            i++;
-            let percent = ((i * 100) / imgs.length).toFixed(0);
-            
-            intprochentChet.innerHTML = `${percent}%`; 
-            perchenload.style.width = `${percent}%`; 
+    const updateProgress = () => {
+        i++;
+        let percent = ((i * 100) / imgs.length).toFixed(0);
+        intprochentChet.innerHTML = `${percent}%`;
+        perchenload.style.width = `${percent}%`;
 
-            if (i === imgs.length) {
-                setTimeout(() => {
-                    document.body.classList.remove('lock-scroll'); // Дозволяємо скрол
-                    hidePreloader();
-                }, 1500);
-            }
-        };
+        if (i === imgs.length) {
+            setTimeout(() => {
+                document.body.classList.remove('lock-scroll'); // Дозволяємо скрол
+                document.documentElement.style.overflow = "visible"; // Виправляємо зміщення
+                hidePreloader();
+            }, 1500);
+        }
+    };
+
+    imgs.forEach((img) => { 
+        if (img.complete) {
+            updateProgress();
+        } else {
+            img.onload = updateProgress;
+            img.onerror = updateProgress;
+        }
     });
 });
+
+document.addEventListener('mousemove', e =>{
+    Object.assign(document.documentElement, {
+        style: `
+        --move-x: ${(e.clientX - window.innerWidth / 2) * -.005}deg;
+        --move-y: ${(e.clientY - window.innerHeight / 2) * -.01}deg;
+        `
+    })
+})
 
