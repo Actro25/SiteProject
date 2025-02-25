@@ -1,11 +1,16 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-
+html {
+  overflow-x: hidden;
+  width: 100vw;
+}
 body{
     font-size: 16px;
     overflow-x: hidden;
+    width: 100vw;
 }
 img{
     width: 100%;
@@ -293,4 +298,68 @@ body.lock-scroll {
   border: 1px solid rgba(255, 255, 255, 0);
 }
 
+:root{
+  --index: calc(1vw + 1vh);
+  --transition: 1.5s cubic-bezier(.05, .5, 0, 1);
+}
 
+.layers {
+  z-index: 2;
+  position: relative; /* Додаємо позицію */
+  perspective: 1000px;
+}
+.layers__contrainer{
+  height: 100vh;
+  min-height: 500px;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+  will-change: transform;
+  transition: transform var(--transition);
+}
+.layers__item{
+  position: absolute;
+  inset: -6vw;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.layer-1{
+  transform: translateZ(-55px) scale(1.06);
+}
+.layer-2{
+  transform: translateZ(80px) scale(.88);
+}
+.layer-3{
+  transform: translateZ(180px) scale(.8);
+}
+.layer-4{
+  transform: translateZ(190px) scale(.9);
+}
+.layer-5{
+  transform: translateZ(300px);
+}
+.hero-content{
+  font-size: calc(var(--index)*2.9);
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: calc(var(--index)*5.5);
+  background: #199fd8;
+  background: -webkit-linear-gradient(to top right, #199fd8 42%, #3197e3 44%, #4121e3 100%);
+  background: -moz-linear-gradient(to top right, #199fd8 42%, #3197e3 44%, #4121e3 100%);
+  background: linear-gradient(to top right, #199fd8 42%, #3197e3 44%, #4121e3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Papyrus", fantasy;
+}
+.layer-5, .layer-3, .layer-2, .layer-1, .layer-4{
+  pointer-events: none;
+}
+.black-overlay { 
+  background-color: grey;
+  width: 100%;
+  height: calc(var(--index)*7);
+  position: relative; /* Додаємо позицію */
+  z-index: 5; /* Ставимо поверх layers */
+}
