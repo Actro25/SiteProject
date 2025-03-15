@@ -356,10 +356,31 @@ body.lock-scroll {
 .layer-5, .layer-3, .layer-2, .layer-1, .layer-4{
   pointer-events: none;
 }
-.black-overlay { 
+.black-overlay{ 
   background-color: grey;
   width: 100%;
   height: calc(var(--index)*7);
   position: relative; /* Додаємо позицію */
   z-index: 5; /* Ставимо поверх layers */
+}
+.hot-bar-inner{
+  background: linear-gradient(90deg, rgba(39, 37, 165, 0.1) 0%, rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 50px;
+  width: 75%;
+  height: calc(var(--index)*2.5);
+  position: absolute;
+  z-index: 20;
+  pointer-events: all;
+}
+.layer-hot-bar{
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  z-index: 5;
+  width: 100%;
+  height: 15%;
 }

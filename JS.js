@@ -62,12 +62,50 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-document.addEventListener('mousemove', e =>{
-    Object.assign(document.documentElement, {
-        style: `
-        --move-x: ${(e.clientX - window.innerWidth / 2) * -.005}deg;
-        --move-y: ${(e.clientY - window.innerHeight / 2) * -.01}deg;
-        `
-    })
-})
+const layers = document.querySelector('.layers');
+const hotBar = document.querySelector('.hot-bar-inner');
+let isHovering = false;
+let isHoveringHotBar = false;
+
+document.addEventListener('mousemove', e => {
+    if (!isHoveringHotBar) { // Анімація працює тільки якщо курсор не на хотбарі
+        isHovering = true;
+        document.documentElement.style.setProperty('--move-x', `${(e.clientX - window.innerWidth / 2) * -.005}deg`);
+        document.documentElement.style.setProperty('--move-y', `${(e.clientY - window.innerHeight / 2) * -.01}deg`);
+    }
+});
+
+// Наводимося на хотбар → зупиняємо рух
+hotBar.addEventListener('mouseenter', () => {
+    isHoveringHotBar = true;
+    document.documentElement.style.transition = 'transform 0.5s ease-out';
+    document.documentElement.style.setProperty('--move-x', `0deg`);
+    document.documentElement.style.setProperty('--move-y', `0deg`);
+});
+
+// Виходимо з хотбару → повертаємо рух
+hotBar.addEventListener('mouseleave', () => {
+    isHoveringHotBar = false;
+});
+
+// Коли мишка виходить з layers → повертаємо анімацію в центр
+layers.addEventListener('mouseleave', () => {
+    if (!isHoveringHotBar) { // Якщо курсор НЕ на хотбарі
+        isHovering = false;
+        document.documentElement.style.transition = 'transform var(--transition)';
+        document.documentElement.style.setProperty('--move-x', `0deg`);
+        document.documentElement.style.setProperty('--move-y', `0deg`);
+    
+        // Через 1.5 секунди знімаємо transition
+        setTimeout(() => {
+            if (!isHovering && !isHoveringHotBar) {
+                document.documentElement.style.transition = '';
+            }
+        }, 1500);
+    }
+});
+
+
+
+
 
